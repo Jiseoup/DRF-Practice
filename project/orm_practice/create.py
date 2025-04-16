@@ -1,10 +1,5 @@
 """Django ORM Practice - Create Example"""
 
-# Setup Django environment for ORM practice.
-from orm_practice.setup import django_setup
-django_setup()
-
-# Import Django ORM models.
 from core.models import User, Post
 
 
