@@ -1,5 +1,7 @@
 """Django ORM Practice - Read Example"""
 
+from django.core.exceptions import MultipleObjectsReturned
+
 from core.models import Post
 
 
@@ -21,6 +23,10 @@ try:
     print(f'({post.post_no}) Title: {post.title} / Content: {post.content} / Author: {post.author.username}')
 except Post.DoesNotExist:
     print(f'Post number {post_no} does not exist.')
+except MultipleObjectsReturned:
+    print(f'Multiple posts returned for post number {post_no}.')
+except Exception as e:
+    print(f'Unknown error occurred: {e}')
 print('\n')
 
 
